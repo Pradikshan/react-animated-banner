@@ -1,1 +1,1 @@
-export type AnimationType = "carousel" | "spring";
+export type AnimationType = "carousel" | "verticalCarousel" | "spring";

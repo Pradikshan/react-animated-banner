@@ -19,6 +19,7 @@ function App() {
           animation="carousel"
           textStyles="font-bold mx-10"
           closeIconVisible={true}
+          duration={3}
         />
         <p>hello there</p>
         <Banner
@@ -33,6 +34,13 @@ function App() {
           duration={2}
           animation="verticalCarousel"
           textStyles="font-bold mx-10"
+        />
+
+        <Banner
+          text="hello there"
+          textStyles="font-bold"
+          backgroundColor="bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500"
+          closeIconVisible={true}
         />
       </div>
     </>

@@ -26,8 +26,8 @@ const Banner: React.FC<BannerProps> = ({
   width = "w-full",
   height = "h-auto",
   padding = "p-2",
-  animation = "carousel",
-  duration = 5,
+  animation,
+  duration = 3,
   closeIconVisible = false,
 }) => {
   const [closeBanner, setCloseBanner] = useState<boolean>(false);
@@ -69,6 +69,8 @@ const Banner: React.FC<BannerProps> = ({
     case "spring":
       animationProps = springAnimationConfig;
       break;
+    default:
+      animationProps = "";
   }
 
   return (

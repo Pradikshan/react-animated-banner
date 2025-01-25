@@ -18,6 +18,7 @@ function App() {
           textArray={arr}
           animation="carousel"
           textStyles="font-bold mx-10"
+          closeIconVisible={true}
         />
         <p>hello there</p>
         <Banner

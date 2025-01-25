@@ -25,12 +25,11 @@ const Banner: React.FC<BannerProps> = ({
   textColor = "text-white",
   width = "w-full",
   height = "h-auto",
-  padding = "p-1",
+  padding = "p-2",
   animation = "carousel",
   duration = 5,
   closeIconVisible = false,
 }) => {
-  const [closeIcon, setCloseIcon] = useState<boolean>(closeIconVisible);
   const [closeBanner, setCloseBanner] = useState<boolean>(false);
 
   const carouselAnimationConfig = {
@@ -78,7 +77,7 @@ const Banner: React.FC<BannerProps> = ({
         <div
           className={`relative overflow-hidden ${width} ${height} ${padding} ${backgroundColor} ${textColor}`}
         >
-          {closeIcon && (
+          {closeIconVisible && (
             <svg
               className="absolute right-0 w-6 h-6 cursor-pointer"
               xmlns="http://www.w3.org/2000/svg"

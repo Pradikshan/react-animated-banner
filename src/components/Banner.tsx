@@ -38,48 +38,6 @@ const Banner: React.FC<BannerProps> = ({
 }) => {
   const [closeBanner, setCloseBanner] = useState<boolean>(false);
 
-  // const carouselAnimationConfig = {
-  //   initial: { x: "100%" },
-  //   animate: { x: "-100%" },
-  //   transition: {
-  //     repeat: Infinity,
-  //     duration: animationDuration,
-  //     ease: "linear",
-  //   },
-  // };
-
-  // const reverseCarouselAnimationConfig = {
-  //   initial: { x: "-100%" },
-  //   animate: { x: "100%" },
-  //   transition: {
-  //     repeat: Infinity,
-  //     duration: animationDuration,
-  //     ease: "linear",
-  //   },
-  // };
-
-  // const verticalCarouselAnimationConfig = {
-  //   initial: { y: "100%" },
-  //   animate: { y: ["100%", "0%", "0%", "-100%"] },
-  //   transition: {
-  //     repeat: Infinity,
-  //     duration: animationDuration,
-  //     ease: "linear",
-  //     times: [0, 0.4, 0.6, 1],
-  //   },
-  // };
-
-  // const reverseVerticalCarouselAnimationConfig = {
-  //   initial: { y: "-100%" },
-  //   animate: { y: ["-100%", "0%", "0%", "100%"] },
-  //   transition: {
-  //     repeat: Infinity,
-  //     duration: animationDuration,
-  //     ease: "linear",
-  //     times: [0, 0.4, 0.6, 1],
-  //   },
-  // };
-
   const springAnimationConfig = {};
 
   let animationProps;
@@ -89,20 +47,12 @@ const Banner: React.FC<BannerProps> = ({
       animationProps = carouselAnimationConfig(animationDuration, direction);
       break;
 
-    // case "reverseCarousel":
-    //   animationProps = reverseCarouselAnimationConfig;
-    //   break;
-
     case "verticalCarousel":
       animationProps = verticalCarouselAnimationConfig(
         animationDuration,
         direction
       );
       break;
-
-    // case "reverseVerticalCarousel":
-    //   animationProps = reverseVerticalCarouselAnimationConfig;
-    //   break;
 
     case "spring":
       animationProps = springAnimationConfig;

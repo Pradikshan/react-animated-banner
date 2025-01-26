@@ -10,7 +10,7 @@ function App() {
           animation="carousel"
           textStyles="font-bold"
           backgroundColor="bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500"
-          duration={15}
+          // duration={6}
           closeIconVisible={true}
         />
         <p>hello there</p>
@@ -26,7 +26,7 @@ function App() {
           text="Hello there"
           duration={1.5}
           animation="verticalCarousel"
-          textStyles="font-bold text-center"
+          textStyles="font-bold"
         />
         <p>hello there</p>
         <Banner
@@ -41,7 +41,11 @@ function App() {
           textStyles="font-bold"
           backgroundColor="bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500"
           closeIconVisible={true}
-        />
+        >
+          <button className="p-3 w-max text-white bg-black rounded-2xl mx-3">
+            Click me
+          </button>
+        </Banner>
       </div>
     </>
   );

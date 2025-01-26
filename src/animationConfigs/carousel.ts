@@ -1,3 +1,4 @@
+// Animation config for carousel
 export const carouselAnimationConfig = (
   animationDuration?: number,
   direction?: string

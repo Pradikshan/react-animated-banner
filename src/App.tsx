@@ -13,6 +13,15 @@ function App() {
           <p>Hello there!</p>
         </Banner>
         <p>hello there</p>
+        <Banner
+          animation="carousel"
+          direction="reverse"
+          backgroundColor="bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500"
+          closeIconVisible={true}
+        >
+          <p>Hello there!</p>
+        </Banner>
+        <p>hello there</p>
 
         <Banner
           animation="carousel"
@@ -33,10 +42,14 @@ function App() {
           <p className="text-white">Hello there!</p>
         </Banner>
         <p>hello there</p>
-        <Banner animationDuration={2} animation="verticalCarousel">
+        <Banner
+          animationDuration={2}
+          animation="verticalCarousel"
+          direction="reverse"
+        >
           <p className="text-white">Hello there!</p>
         </Banner>
-
+        <p>Hello there</p>
         <Banner
           backgroundColor="bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500"
           closeIconVisible={true}

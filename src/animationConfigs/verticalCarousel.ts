@@ -1,3 +1,4 @@
+// Animation config for vertical carousel
 export const verticalCarouselAnimationConfig = (
   animationDuration?: number,
   direction?: string

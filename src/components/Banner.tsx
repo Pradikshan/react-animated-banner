@@ -1,6 +1,10 @@
 import React, { useState } from "react";
-import { AnimationType } from "../types/types";
 import { motion } from "motion/react";
+
+import { AnimationType } from "../types/types";
+
+import { carouselAnimationConfig } from "../animationConfigs/carousel";
+import { verticalCarouselAnimationConfig } from "../animationConfigs/verticalCarousel";
 
 interface BannerProps {
   backgroundColor?: string;
@@ -8,6 +12,7 @@ interface BannerProps {
   height?: string;
   padding?: string;
   animation?: AnimationType;
+  direction?: string;
   animationDuration?: number;
   closeIconVisible?: boolean;
   children?: React.ReactElement;
@@ -23,6 +28,7 @@ const Banner: React.FC<BannerProps> = ({
   height = "h-auto",
   padding = "p-2",
   animation,
+  direction,
   animationDuration = 5,
   closeIconVisible = false,
   containerStyle,
@@ -32,47 +38,47 @@ const Banner: React.FC<BannerProps> = ({
 }) => {
   const [closeBanner, setCloseBanner] = useState<boolean>(false);
 
-  const carouselAnimationConfig = {
-    initial: { x: "100%" },
-    animate: { x: "-100%" },
-    transition: {
-      repeat: Infinity,
-      duration: animationDuration,
-      ease: "linear",
-    },
-  };
+  // const carouselAnimationConfig = {
+  //   initial: { x: "100%" },
+  //   animate: { x: "-100%" },
+  //   transition: {
+  //     repeat: Infinity,
+  //     duration: animationDuration,
+  //     ease: "linear",
+  //   },
+  // };
 
-  const reverseCarouselAnimationConfig = {
-    initial: { x: "-100%" },
-    animate: { x: "100%" },
-    transition: {
-      repeat: Infinity,
-      duration: animationDuration,
-      ease: "linear",
-    },
-  };
+  // const reverseCarouselAnimationConfig = {
+  //   initial: { x: "-100%" },
+  //   animate: { x: "100%" },
+  //   transition: {
+  //     repeat: Infinity,
+  //     duration: animationDuration,
+  //     ease: "linear",
+  //   },
+  // };
 
-  const verticalCarouselAnimationConfig = {
-    initial: { y: "100%" },
-    animate: { y: ["100%", "0%", "0%", "-100%"] },
-    transition: {
-      repeat: Infinity,
-      duration: animationDuration,
-      ease: "linear",
-      times: [0, 0.4, 0.6, 1],
-    },
-  };
+  // const verticalCarouselAnimationConfig = {
+  //   initial: { y: "100%" },
+  //   animate: { y: ["100%", "0%", "0%", "-100%"] },
+  //   transition: {
+  //     repeat: Infinity,
+  //     duration: animationDuration,
+  //     ease: "linear",
+  //     times: [0, 0.4, 0.6, 1],
+  //   },
+  // };
 
-  const reverseVerticalCarouselAnimationConfig = {
-    initial: { y: "-100%" },
-    animate: { y: ["-100%", "0%", "0%", "100%"] },
-    transition: {
-      repeat: Infinity,
-      duration: animationDuration,
-      ease: "linear",
-      times: [0, 0.4, 0.6, 1],
-    },
-  };
+  // const reverseVerticalCarouselAnimationConfig = {
+  //   initial: { y: "-100%" },
+  //   animate: { y: ["-100%", "0%", "0%", "100%"] },
+  //   transition: {
+  //     repeat: Infinity,
+  //     duration: animationDuration,
+  //     ease: "linear",
+  //     times: [0, 0.4, 0.6, 1],
+  //   },
+  // };
 
   const springAnimationConfig = {};
 
@@ -80,20 +86,23 @@ const Banner: React.FC<BannerProps> = ({
 
   switch (animation) {
     case "carousel":
-      animationProps = carouselAnimationConfig;
+      animationProps = carouselAnimationConfig(animationDuration, direction);
       break;
 
-    case "reverseCarousel":
-      animationProps = reverseCarouselAnimationConfig;
-      break;
+    // case "reverseCarousel":
+    //   animationProps = reverseCarouselAnimationConfig;
+    //   break;
 
     case "verticalCarousel":
-      animationProps = verticalCarouselAnimationConfig;
+      animationProps = verticalCarouselAnimationConfig(
+        animationDuration,
+        direction
+      );
       break;
 
-    case "reverseVerticalCarousel":
-      animationProps = reverseVerticalCarouselAnimationConfig;
-      break;
+    // case "reverseVerticalCarousel":
+    //   animationProps = reverseVerticalCarouselAnimationConfig;
+    //   break;
 
     case "spring":
       animationProps = springAnimationConfig;

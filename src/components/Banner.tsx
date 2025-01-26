@@ -42,6 +42,16 @@ const Banner: React.FC<BannerProps> = ({
     },
   };
 
+  const reverseCarouselAnimationConfig = {
+    initial: { x: "-100%" },
+    animate: { x: "100%" },
+    transition: {
+      repeat: Infinity,
+      duration: animationDuration,
+      ease: "linear",
+    },
+  };
+
   const verticalCarouselAnimationConfig = {
     initial: { y: "100%" },
     animate: { y: ["100%", "0%", "0%", "-100%"] },
@@ -71,6 +81,10 @@ const Banner: React.FC<BannerProps> = ({
   switch (animation) {
     case "carousel":
       animationProps = carouselAnimationConfig;
+      break;
+
+    case "reverseCarousel":
+      animationProps = reverseCarouselAnimationConfig;
       break;
 
     case "verticalCarousel":

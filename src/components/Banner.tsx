@@ -3,11 +3,7 @@ import { AnimationType } from "../types/types";
 import { motion } from "motion/react";
 
 interface BannerProps {
-  // text?: string;
-  // textArray?: string[];
-  // textStyles?: string;
   backgroundColor?: string;
-  // textColor?: string;
   width?: string;
   height?: string;
   padding?: string;
@@ -22,18 +18,13 @@ interface BannerProps {
 }
 
 const Banner: React.FC<BannerProps> = ({
-  // text,
-  // textArray,
-  // textStyles,
   backgroundColor = "bg-black",
-  // textColor = "text-white",
   width = "w-full",
   height = "h-auto",
   padding = "p-2",
   animation,
   duration = 5,
   closeIconVisible = false,
-  // childrenPosition,
   children,
   containerClassName,
   motionClassName,
@@ -112,44 +103,6 @@ const Banner: React.FC<BannerProps> = ({
           >
             {children}
           </motion.div>
-
-          {/* {textArray ? (
-            <motion.div
-              {...animationProps}
-              className="flex items-center justify-center"
-            >
-              {childrenPosition === "before" && children && (
-                <div className="flex-shrink-0">{children}</div>
-              )}
-              {textArray.map((item, index) => (
-                <>
-                  <div className="flex items-center justify-center" key={index}>
-                    <p className={`${textStyles}`}>{item}</p>
-                  </div>
-                </>
-              ))}
-              {childrenPosition === "after" && children && (
-                <div className="flex-shrink-0">{children}</div>
-              )}
-            </motion.div>
-          ) : (
-            <motion.div
-              {...animationProps}
-              className="flex items-center justify-center"
-            >
-              <>
-                {childrenPosition === "before" && children && (
-                  <div className="flex-shrink-0">{children}</div>
-                )}
-                <div className="flex items-center justify-center">
-                  <p className={`${textStyles}`}>{text}</p>
-                </div>
-                {childrenPosition === "after" && children && (
-                  <div className="flex-shrink-0">{children}</div>
-                )}
-              </>
-            </motion.div>
-          )} */}
         </div>
       )}
     </>

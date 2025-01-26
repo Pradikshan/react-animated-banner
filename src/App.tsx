@@ -6,24 +6,15 @@ function App() {
     <>
       <div>
         <Banner
-          // text="hello there"
           animation="carousel"
-          // textStyles="font-bold"
           backgroundColor="bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500"
-          // duration={6}
           closeIconVisible={true}
         >
           <p>Hello there!</p>
         </Banner>
         <p>hello there</p>
 
-        <Banner
-          // textArray={arr}
-          animation="carousel"
-          // textStyles="font-bold mx-10"
-          closeIconVisible={true}
-          duration={6}
-        >
+        <Banner animation="carousel" closeIconVisible={true} duration={6}>
           <>
             {arr.map((item, index) => (
               <p key={index} className="text-white">
@@ -34,27 +25,15 @@ function App() {
           </>
         </Banner>
         <p>hello there</p>
-        <Banner
-          // text="Hello there"
-          duration={1.5}
-          animation="verticalCarousel"
-          // textStyles="font-bold"
-        >
+        <Banner duration={1.5} animation="verticalCarousel">
           <p className="text-white">Hello there!</p>
         </Banner>
         <p>hello there</p>
-        <Banner
-          // textArray={arr}
-          duration={2}
-          animation="verticalCarousel"
-          // textStyles="font-bold mx-10"
-        >
+        <Banner duration={2} animation="verticalCarousel">
           <p className="text-white">Hello there!</p>
         </Banner>
 
         <Banner
-          // text="hello there"
-          // textStyles="font-bold"
           backgroundColor="bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500"
           closeIconVisible={true}
         >

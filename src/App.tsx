@@ -8,7 +8,7 @@ function App() {
         <Banner
           // text="hello there"
           animation="carousel"
-          textStyles="font-bold"
+          // textStyles="font-bold"
           backgroundColor="bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500"
           // duration={6}
           closeIconVisible={true}
@@ -20,7 +20,7 @@ function App() {
         <Banner
           // textArray={arr}
           animation="carousel"
-          textStyles="font-bold mx-10"
+          // textStyles="font-bold mx-10"
           closeIconVisible={true}
           duration={6}
         >
@@ -38,7 +38,7 @@ function App() {
           // text="Hello there"
           duration={1.5}
           animation="verticalCarousel"
-          textStyles="font-bold"
+          // textStyles="font-bold"
         >
           <p className="text-white">Hello there!</p>
         </Banner>
@@ -47,14 +47,14 @@ function App() {
           // textArray={arr}
           duration={2}
           animation="verticalCarousel"
-          textStyles="font-bold mx-10"
+          // textStyles="font-bold mx-10"
         >
           <p className="text-white">Hello there!</p>
         </Banner>
 
         <Banner
           // text="hello there"
-          textStyles="font-bold"
+          // textStyles="font-bold"
           backgroundColor="bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500"
           closeIconVisible={true}
         >

@@ -1,26 +1,9 @@
 import React, { useState } from "react";
 import { motion } from "motion/react";
 
-import { AnimationType } from "../types/types";
-
 import { carouselAnimationConfig } from "../animationConfigs/carousel";
 import { verticalCarouselAnimationConfig } from "../animationConfigs/verticalCarousel";
-
-interface BannerProps {
-  backgroundColor?: string;
-  width?: string;
-  height?: string;
-  padding?: string;
-  animation?: AnimationType;
-  direction?: string;
-  animationDuration?: number;
-  closeIconVisible?: boolean;
-  children?: React.ReactElement;
-
-  containerStyle?: string;
-  motionStyle?: string;
-  closeIconStyle?: string;
-}
+import { AnimationProps, BannerProps } from "../interface/interface";
 
 const Banner: React.FC<BannerProps> = ({
   backgroundColor = "bg-black",
@@ -38,9 +21,7 @@ const Banner: React.FC<BannerProps> = ({
 }) => {
   const [closeBanner, setCloseBanner] = useState<boolean>(false);
 
-  const springAnimationConfig = {};
-
-  let animationProps;
+  let animationProps: AnimationProps = {};
 
   // Logic to assign the proper animation based on the animation type that is defined
   switch (animation) {
@@ -55,11 +36,8 @@ const Banner: React.FC<BannerProps> = ({
       );
       break;
 
-    case "spring":
-      animationProps = springAnimationConfig;
-      break;
     default:
-      animationProps = "";
+      animationProps = {};
   }
 
   return (

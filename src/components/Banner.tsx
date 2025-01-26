@@ -8,7 +8,7 @@ interface BannerProps {
   height?: string;
   padding?: string;
   animation?: AnimationType;
-  duration?: number;
+  animationDuration?: number;
   closeIconVisible?: boolean;
   children?: React.ReactElement;
 
@@ -23,7 +23,7 @@ const Banner: React.FC<BannerProps> = ({
   height = "h-auto",
   padding = "p-2",
   animation,
-  duration = 5,
+  animationDuration = 5,
   closeIconVisible = false,
   children,
   containerClassName,
@@ -37,7 +37,7 @@ const Banner: React.FC<BannerProps> = ({
     animate: { x: "-100%" },
     transition: {
       repeat: Infinity,
-      duration: duration,
+      duration: animationDuration,
       ease: "linear",
     },
   };
@@ -47,7 +47,7 @@ const Banner: React.FC<BannerProps> = ({
     animate: { y: ["100%", "0%", "0%", "-100%"] },
     transition: {
       repeat: Infinity,
-      duration: duration,
+      duration: animationDuration,
       ease: "linear",
       times: [0, 0.4, 0.6, 1],
     },

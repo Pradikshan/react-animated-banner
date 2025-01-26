@@ -62,6 +62,7 @@ function App() {
             <p>Hello there!</p>
           </>
         </Banner>
+        <p>Hello there</p>
       </div>
     </>
   );

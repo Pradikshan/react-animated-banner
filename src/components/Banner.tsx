@@ -25,10 +25,10 @@ const Banner: React.FC<BannerProps> = ({
   animation,
   animationDuration = 5,
   closeIconVisible = false,
-  children,
   containerStyle,
   motionStyle,
   closeIconStyle,
+  children,
 }) => {
   const [closeBanner, setCloseBanner] = useState<boolean>(false);
 
@@ -53,6 +53,17 @@ const Banner: React.FC<BannerProps> = ({
     },
   };
 
+  const reverseVerticalCarouselAnimationConfig = {
+    initial: { y: "-100%" },
+    animate: { y: ["-100%", "0%", "0%", "100%"] },
+    transition: {
+      repeat: Infinity,
+      duration: animationDuration,
+      ease: "linear",
+      times: [0, 0.4, 0.6, 1],
+    },
+  };
+
   const springAnimationConfig = {};
 
   let animationProps;
@@ -64,6 +75,10 @@ const Banner: React.FC<BannerProps> = ({
 
     case "verticalCarousel":
       animationProps = verticalCarouselAnimationConfig;
+      break;
+
+    case "reverseVerticalCarousel":
+      animationProps = reverseVerticalCarouselAnimationConfig;
       break;
 
     case "spring":

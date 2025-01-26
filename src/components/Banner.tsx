@@ -5,10 +5,10 @@ import { motion } from "motion/react";
 interface BannerProps {
   // text?: string;
   // textArray?: string[];
-  textStyles?: string;
+  // textStyles?: string;
   backgroundColor?: string;
 
-  textColor?: string;
+  // textColor?: string;
   width?: string;
   height?: string;
   padding?: string;

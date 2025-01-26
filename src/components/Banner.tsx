@@ -7,7 +7,6 @@ interface BannerProps {
   // textArray?: string[];
   // textStyles?: string;
   backgroundColor?: string;
-
   // textColor?: string;
   width?: string;
   height?: string;
@@ -15,8 +14,11 @@ interface BannerProps {
   animation?: AnimationType;
   duration?: number;
   closeIconVisible?: boolean;
-
   children?: React.ReactElement;
+
+  containerClassName?: string;
+  motionClassName?: string;
+  closeIconClassName?: string;
 }
 
 const Banner: React.FC<BannerProps> = ({
@@ -33,6 +35,9 @@ const Banner: React.FC<BannerProps> = ({
   closeIconVisible = false,
   // childrenPosition,
   children,
+  containerClassName,
+  motionClassName,
+  closeIconClassName,
 }) => {
   const [closeBanner, setCloseBanner] = useState<boolean>(false);
 
@@ -81,11 +86,11 @@ const Banner: React.FC<BannerProps> = ({
     <>
       {!closeBanner && (
         <div
-          className={`relative overflow-hidden ${width} ${height} ${padding} ${backgroundColor} `}
+          className={`relative overflow-hidden ${width} ${height} ${padding} ${backgroundColor} ${containerClassName}`}
         >
           {closeIconVisible && (
             <svg
-              className="absolute right-0 w-6 h-6 cursor-pointer"
+              className={`absolute right-0 w-6 h-6 cursor-pointer ${closeIconClassName}`}
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
               viewBox="0 0 24 24"
@@ -103,7 +108,7 @@ const Banner: React.FC<BannerProps> = ({
 
           <motion.div
             {...animationProps}
-            className="flex items-center justify-center"
+            className={`flex items-center justify-center ${motionClassName}`}
           >
             {children}
           </motion.div>

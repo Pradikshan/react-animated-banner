@@ -12,9 +12,9 @@ interface BannerProps {
   closeIconVisible?: boolean;
   children?: React.ReactElement;
 
-  containerClassName?: string;
-  motionClassName?: string;
-  closeIconClassName?: string;
+  containerStyle?: string;
+  motionStyle?: string;
+  closeIconStyle?: string;
 }
 
 const Banner: React.FC<BannerProps> = ({
@@ -26,9 +26,9 @@ const Banner: React.FC<BannerProps> = ({
   animationDuration = 5,
   closeIconVisible = false,
   children,
-  containerClassName,
-  motionClassName,
-  closeIconClassName,
+  containerStyle,
+  motionStyle,
+  closeIconStyle,
 }) => {
   const [closeBanner, setCloseBanner] = useState<boolean>(false);
 
@@ -77,11 +77,11 @@ const Banner: React.FC<BannerProps> = ({
     <>
       {!closeBanner && (
         <div
-          className={`relative overflow-hidden ${width} ${height} ${padding} ${backgroundColor} ${containerClassName}`}
+          className={`relative overflow-hidden ${width} ${height} ${padding} ${backgroundColor} ${containerStyle}`}
         >
           {closeIconVisible && (
             <svg
-              className={`absolute right-0 w-6 h-6 cursor-pointer ${closeIconClassName}`}
+              className={`absolute right-0 w-6 h-6 cursor-pointer ${closeIconStyle}`}
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
               viewBox="0 0 24 24"
@@ -99,7 +99,7 @@ const Banner: React.FC<BannerProps> = ({
 
           <motion.div
             {...animationProps}
-            className={`flex items-center justify-center ${motionClassName}`}
+            className={`flex items-center justify-center ${motionStyle}`}
           >
             {children}
           </motion.div>

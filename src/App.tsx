@@ -14,10 +14,14 @@ function App() {
         </Banner>
         <p>hello there</p>
 
-        <Banner animation="carousel" closeIconVisible={true} duration={6}>
+        <Banner
+          animation="carousel"
+          closeIconVisible={true}
+          animationDuration={10}
+        >
           <>
             {arr.map((item, index) => (
-              <p key={index} className="text-white">
+              <p key={index} className="text-white mx-5">
                 {" "}
                 {item}
               </p>
@@ -25,11 +29,11 @@ function App() {
           </>
         </Banner>
         <p>hello there</p>
-        <Banner duration={1.5} animation="verticalCarousel">
+        <Banner animationDuration={1.5} animation="verticalCarousel">
           <p className="text-white">Hello there!</p>
         </Banner>
         <p>hello there</p>
-        <Banner duration={2} animation="verticalCarousel">
+        <Banner animationDuration={2} animation="verticalCarousel">
           <p className="text-white">Hello there!</p>
         </Banner>
 

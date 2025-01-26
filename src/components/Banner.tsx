@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { AnimationType, ChildrenPosition } from "../types/types";
+import { AnimationType } from "../types/types";
 import { motion } from "motion/react";
 
 interface BannerProps {
@@ -16,7 +16,6 @@ interface BannerProps {
   duration?: number;
   closeIconVisible?: boolean;
 
-  childrenPosition?: ChildrenPosition;
   children?: React.ReactElement;
 }
 

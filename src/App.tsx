@@ -25,6 +25,16 @@ function App() {
 
         <Banner
           animation="carousel"
+          direction="reverse"
+          backgroundColor="bg-[conic-gradient(at_bottom_right,_var(--tw-gradient-stops))] from-[#1d4ed8] via-[#1e40af] to-[#111827]"
+          closeIconVisible={true}
+        >
+          <p>Hello there!</p>
+        </Banner>
+        <p>hello there</p>
+
+        <Banner
+          animation="carousel"
           closeIconVisible={true}
           animationDuration={10}
         >

@@ -1,1 +1,21 @@
 @import "tailwindcss";
+
+@keyframes colorCycle {
+  0% {
+    background-color: #22c55e; /* Green */
+  }
+  33% {
+    background-color: #3b82f6; /* Blue */
+  }
+  66% {
+    background-color: #f97316; /* Orange */
+  }
+  100% {
+    background-color: #22c55e; /* Back to Green */
+  }
+}
+
+/* Apply the animation globally or to a specific class */
+.animate-color-cycle {
+  animation: colorCycle 10s infinite;
+}

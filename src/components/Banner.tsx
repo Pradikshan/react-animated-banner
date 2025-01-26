@@ -42,6 +42,7 @@ const Banner: React.FC<BannerProps> = ({
 
   let animationProps;
 
+  // Logic to assign the proper animation based on the animation type that is defined
   switch (animation) {
     case "carousel":
       animationProps = carouselAnimationConfig(animationDuration, direction);
@@ -67,6 +68,7 @@ const Banner: React.FC<BannerProps> = ({
         <div
           className={`relative overflow-hidden ${width} ${height} ${padding} ${backgroundColor} ${containerStyle}`}
         >
+          {/* Close icon SVG */}
           {closeIconVisible && (
             <svg
               className={`absolute right-0 w-6 h-6 cursor-pointer ${closeIconStyle}`}

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { AnimationType } from "../types/types";
+import { AnimationType, ChildrenPosition } from "../types/types";
 import { motion } from "motion/react";
 
 interface BannerProps {
@@ -15,6 +15,9 @@ interface BannerProps {
   animation?: AnimationType;
   duration?: number;
   closeIconVisible?: boolean;
+
+  childrenPosition?: ChildrenPosition;
+  children?: React.ReactElement;
 }
 
 const Banner: React.FC<BannerProps> = ({
@@ -27,8 +30,10 @@ const Banner: React.FC<BannerProps> = ({
   height = "h-auto",
   padding = "p-2",
   animation,
-  duration = 3,
+  duration = 5,
   closeIconVisible = false,
+  childrenPosition,
+  children,
 }) => {
   const [closeBanner, setCloseBanner] = useState<boolean>(false);
 
@@ -98,16 +103,40 @@ const Banner: React.FC<BannerProps> = ({
           )}
 
           {textArray ? (
-            <motion.div {...animationProps} className="flex">
+            <motion.div
+              {...animationProps}
+              className="flex items-center justify-center"
+            >
+              {childrenPosition === "before" && children && (
+                <div className="flex-shrink-0">{children}</div>
+              )}
               {textArray.map((item, index) => (
-                <p className={`${textStyles}`} key={index}>
-                  {item}
-                </p>
+                <>
+                  <div className="flex items-center justify-center" key={index}>
+                    <p className={`${textStyles}`}>{item}</p>
+                  </div>
+                </>
               ))}
+              {childrenPosition === "after" && children && (
+                <div className="flex-shrink-0">{children}</div>
+              )}
             </motion.div>
           ) : (
-            <motion.div {...animationProps}>
-              <p className={`${textStyles}`}>{text}</p>
+            <motion.div
+              {...animationProps}
+              className="flex items-center justify-center"
+            >
+              <>
+                {childrenPosition === "before" && children && (
+                  <div className="flex-shrink-0">{children}</div>
+                )}
+                <div className="flex items-center justify-center">
+                  <p className={`${textStyles}`}>{text}</p>
+                </div>
+                {childrenPosition === "after" && children && (
+                  <div className="flex-shrink-0">{children}</div>
+                )}
+              </>
             </motion.div>
           )}
         </div>

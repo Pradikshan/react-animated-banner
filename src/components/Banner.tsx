@@ -19,6 +19,7 @@ const Banner: React.FC<BannerProps> = ({
   closeIconStyle,
   children,
 }) => {
+  // State to track the component's visibility
   const [closeBanner, setCloseBanner] = useState<boolean>(false);
 
   let animationProps: AnimationProps = {};

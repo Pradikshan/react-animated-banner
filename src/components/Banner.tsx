@@ -24,7 +24,7 @@ const Banner: React.FC<BannerProps> = ({
 
   let animationProps: AnimationProps = {};
 
-  // Logic to assign the proper animation based on the animation type that is defined
+  // Logic to assign the proper animation based on the animation type that is passed
   switch (animation) {
     case "carousel":
       animationProps = carouselAnimationConfig(animationDuration, direction);

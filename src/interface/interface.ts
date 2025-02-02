@@ -21,7 +21,6 @@ export interface BannerProps {
   animationDuration?: number;
   closeIconVisible?: boolean;
   children?: React.ReactElement;
-
   containerStyle?: string;
   motionStyle?: string;
   closeIconStyle?: string;

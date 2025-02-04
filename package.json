@@ -1,11 +1,24 @@
 {
   "name": "react-animated-banner",
-  "private": true,
-  "version": "0.0.0",
+  "private": false,
+  "version": "0.1.0",
   "type": "module",
+  "main": "dist/index.js",
+  "module": "dist.index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "require": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "dev": "vite",
-    "build": "tsc -b && vite build",
+    "build": "tsc -ourDir && vite build",
+    "prepare": "npm run build",
     "lint": "eslint .",
     "preview": "vite preview"
   },
